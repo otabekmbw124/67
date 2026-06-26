@@ -124,6 +124,7 @@ dependencies:
 dev_dependencies:
   # flutter_test:
   #   sdk: flutter
+  flutter_launcher_icons: ^0.14.4
   lint: ^2.3.0
   build_web_compilers: ^4.0.11
   build_runner: ^2.4.13
@@ -195,3 +196,11 @@ sentry:
   upload_sources: true
   log_level: info
   ignore_missing: true
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon/icon.png"
+  adaptive_icon_background: "assets/icon/icon_background.png"
+  adaptive_icon_foreground: "assets/icon/icon_foreground.png"
+  min_sdk_android: 21
