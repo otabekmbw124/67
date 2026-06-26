@@ -1,0 +1,14 @@
+name: Manual Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-build:
+    uses: ./.github/workflows/build.yml
+    with:
+      upload-artifact: true
+      tag-name: "draft"
+      channel: "dev"
+    permissions: write-all
+    secrets: inherit
