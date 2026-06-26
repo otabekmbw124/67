@@ -1,0 +1,31 @@
+name: Generate Icons
+
+on:
+  workflow_dispatch:
+
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.38.5'
+          channel: 'stable'
+
+      - name: Install launcher icons package
+        run: flutter pub add dev:flutter_launcher_icons
+
+      - name: Generate icons
+        run: dart run flutter_launcher_icons
+
+      - name: Commit generated icons
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add android/app/src/main/res
+          git commit -m "Generate 67VPN app icons" || echo "nothing to commit"
+          git push
