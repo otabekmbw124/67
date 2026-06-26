@@ -74,9 +74,9 @@ class HomePage extends HookConsumerWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: const AssetImage('assets/images/world_map.png'), // Replace with your image path
+            image: const AssetImage('assets/images/home_bg.png'), // Replace with your image path
             fit: BoxFit.cover,
-            opacity: 0.09,
+            opacity: 1.0,
             colorFilter: theme.brightness == Brightness.dark
                 ? ColorFilter.mode(Colors.white.withValues(alpha: .15), BlendMode.srcIn) //
                 : ColorFilter.mode(
